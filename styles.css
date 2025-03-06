@@ -1,0 +1,847 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: "Jost", sans-serif;
+  font-weight: 400; /* Default to Regular */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card.border-0.shadow {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #7928ca, #9b53e0);
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-text h1 span {
+  color: #ff8adb;
+}
+
+.hero-service {
+  margin-top: 3rem;
+}
+
+.hero-service h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-service p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+}
+
+.view-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s;
+}
+
+.view-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* .arrow {
+  display: inline-block;
+  transform: rotate(45deg);
+} */
+
+.spinning-star {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  color: white;
+  opacity: 0.7;
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Services Section */
+.services-section {
+  /* // min-height: 100vh; */
+  background-color: #1a1a2e;
+  color: white;
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  height: 731px;
+}
+
+.services-header {
+  text-align: center;
+  /* margin-bottom: 5rem; */
+  position: relative;
+}
+
+.services-header h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.services-header span {
+  font-weight: 700;
+}
+
+.services-star {
+  position: absolute;
+  top: 0;
+  right: 25%;
+}
+
+.service-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.service-button-container {
+  position: relative;
+}
+
+.service-button {
+  min-width: 300px;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1;
+  position: relative;
+}
+
+.service-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bg-purple {
+  background-color: #9b53e0;
+}
+
+.bg-cyan {
+  background-color: #22b8cf;
+}
+
+.bg-orange {
+  background-color: #ff922b;
+}
+
+.bg-yellow {
+  background-color: #fab005;
+}
+
+.service-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 768px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+
+.service-detail.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.service-detail-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.service-detail-text {
+  width: 50%;
+  padding: 3rem;
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+.service-detail-text h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.service-detail-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.service-detail-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.service-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-detail-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.service-detail-curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  clip-path: circle(0% at 100% 50%);
+  transition: clip-path 0.6s cubic-bezier(0.83, 0.04, 0.32, 1);
+}
+
+.service-detail.active .service-detail-curve {
+  clip-path: circle(150% at 100% 50%);
+}
+
+.service-detail-image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 768px;
+  border-radius: 60% 0 0 30%;
+  overflow: hidden;
+  z-index: 7;
+  transform: translateX(100%);
+  transition: transform 0.6s cubic-bezier(0.83, 0.04, 0.32, 1);
+}
+
+.service-detail.active .service-detail-image-container {
+  transform: translateX(0);
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: white;
+  font-weight: 500;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+.close-detail {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  z-index: 60;
+}
+
+/* Ensure services-section remains in the background */
+.services-section {
+  /* position: relative;
+  z-index: 1;  */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* When active, show the service-detail smoothly */
+.service-detail.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Close button styles */
+.close-detail {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Ensure services-section is a relative container */
+.services-section {
+  position: relative;
+  background-color: #1a1a2e;
+  color: white;
+  padding: 5rem 2rem;
+  /* min-height: 800px; */
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: flex-start; */
+  overflow: hidden;
+  background-image: url("./images/Group\ 13.png");
+  background-repeat: no-repeat;
+}
+
+.services-section {
+  position: relative;
+  background-color: #1a1a2e;
+  color: white;
+  padding: 5rem 2rem;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  /* Background Image */
+  background-image: url("./images/Group\ 13.png");
+  background-repeat: no-repeat;
+  background-size: contain; /* Ensures it fits well */
+  background-position: bottom center; /* Moves it to the bottom */
+}
+
+.logo-container {
+  background-position: bottom center;
+  background-size: contain;
+  position: relative;
+  bottom: 0;
+  top: 80%;
+  /* background-color: crimson; */
+}
+
+/* Service Detail Overlay (Inside .services-section) */
+.service-detail {
+  position: absolute; /* Keeps it inside .services-section */
+  /* //top: 100px; Position below header */
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  /* width: 90%; */
+  /* max-width: 1000px;
+  height: 600px; */
+  background: rgba(0, 0, 0, 0.95);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2; /* Ensures it overlays service buttons */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* When active, show the service-detail smoothly */
+.service-detail.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  border-radius: 0px;
+}
+
+/* Close button */
+.close-detail {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Service buttons styling */
+.service-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.service-button {
+  min-width: 250px;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Background colors */
+.bg-purple {
+  background-color: #9b53e0;
+}
+.bg-cyan {
+  background-color: #22b8cf;
+}
+.bg-orange {
+  background-color: #ff922b;
+}
+.bg-yellow {
+  background-color: #fab005;
+}
+
+/* slider styles */
+
+/* Logo Carousel Styling */
+.logo-slide {
+  max-width: 200px; /* Adjust size of logos */
+  height: auto;
+  margin: auto;
+}
+
+/* Hide the default Bootstrap carousel indicators */
+.carousel-indicators {
+  display: none;
+}
+
+/* logo-container styles */
+
+/* Logo Slider Styling */
+.logo-slider {
+  overflow: hidden;
+  width: 100%;
+  /* // background: #1a1a2e; */
+  padding: 20px 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Track for scrolling animation */
+.logo-track {
+  display: flex;
+  width: calc(250px * 10); /* Adjust width based on number of slides */
+  animation: scroll 40s linear infinite;
+}
+
+/* Individual logo slide */
+
+.logo-slide {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  gap: 16px;
+  padding: 0px;
+  color: rgb(0, 0, 0);
+  /* font-size: 1rem; */
+}
+
+.logo-slide img {
+  width: 100px; /* Adjust logo size */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+water ripples styles
+.ripples-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; /* Adjust as per your design */
+  background-size: "cover";
+  background-position: "center";
+
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.ripples-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay-content,
+.below-content {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.overlay-content {
+  top: 30%;
+}
+
+.below-content {
+  bottom: 10px;
+}
+
+/* Background Images */
+.work1 .ripples-img {
+  background-image: url(./images/col.png);
+}
+
+.work2 .ripples-img {
+  background-image: url(./images/col.png);
+}
+
+.Row2 .ripples-img {
+  background-image: url(./images/col.png);
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.work1{
+  width: 100%;
+  height: 654px;
+}
+
+.work2{
+  width: 100%;
+  height: 654px;
+}
+
+.row2{
+  width: 100%;
+  height: 314px;
+}
+.ripples-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; /* Adjust height based on your design */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ripples {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; /* Adjust height based on your design */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ripples-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ripples-wrapper:hover .ripples-img {
+  transform: scale(1.05);
+}
+
+/* Overlay Content (Top) */
+/* .overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+} */
+.overlay-content {
+  position: absolute;
+  top: 16%;
+  left: 5%;
+  /* transform: translate(0%, 0%); */
+  color: white;
+  /* text-align: center; */
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ripples-wrapper:hover .overlay-content {
+  opacity: 1;
+}
+
+/* Below Content (Bottom) */
+/* .below-content {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-74%, 217%);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+} */
+
+.below-content {
+  position: absolute;
+  /* bottom: 15px; */
+  top: 0%;
+  left: -27%;
+  transform: translate(0%, 294%);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Background Images */
+.work1 .ripples-img {
+  background-image: url(./images/col.png);
+}
+
+.work2 .ripples-img {
+  background-image: url(./images/col2.png);
+}
+
+.Row2 .ripples-img {
+  background-image: url(./images/col2.png);
+}
+
+/* Responsive Adjustments */
+/* @media (max-width: 768px) {
+  .ripples-wrapper {
+    height: 250px;
+  }
+  .overlay-content {
+    font-size: 1.2rem;
+  }
+  .below-content {
+    font-size: 0.9rem;
+  }
+} */
+
+
+ .ripples-img {
+  background-image: url(./images/col2.png);
+}
+
+ /* .ripples-img {
+  background-image: url(./images/col2.png);
+}
+
+ .ripples-img {
+  background-image: url(./images/col2.png);
+} */
+
+@media screen and (max-width: 600px) {
+  .col-12.col-lg-8.col-md-6.work1 {
+    margin-bottom: 4px;
+  }
+  .col-12{
+    margin-bottom: 4px;
+  }
+}
+
+
+
+.carousel-item {
+  min-height: 400px; /* Adjust height */
+}
+.carousel-image {
+  width: 100%;
+  max-height: 498px; 
+  object-fit: cover; /* Ensures image fits properly */
+  border-radius: 10px;
+}
+
+
+
+span.carousel-control-prev-icon {
+  transform: translate(11%, -0px);
+  position: absolute;
+  left: 537%;
+  top: 80%;
+  color: black;
+  background-color: #222;
+}
+span.carousel-control-next-icon {
+  color: black;
+  background-color: black;
+  position: absolute;
+  top: 80%;
+
+}
+
+
+.cardsize{
+  width: 287px;
+  height: 347px;
+  padding: 20px;
+}
+
+
+.text-center {
+  text-align: center!important;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (min-width: 768px) {
+  .col-md-4 {
+      flex: 0 0 auto;
+      width: 27.333333% !important;
+  }
+}
+
+
+.first-card {
+  transform: rotateZ(353deg);
+  /* transition: transform 0.5s ease-in-out; */
+}
+
+/* Optional: Reset rotation on hover */
+/* .first-card:hover {
+  transform: rotateZ(0deg);
+} */
+
+
+.second-card{
+  transform: rotateZ(7.65deg);
+}
+
+.thrid-card{
+  transform: rotateZ(-5.32deg);
+}
