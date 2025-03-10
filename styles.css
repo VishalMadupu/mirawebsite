@@ -44,7 +44,7 @@ button {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #7928ca, #9b53e0);
+  background: linear-gradient(135deg, #A8518A, #A8518A);
   color: white;
 }
 
@@ -189,54 +189,6 @@ nav {
   right: 25%;
 }
 
-.service-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  position: relative;
-}
-
-.service-button-container {
-  position: relative;
-}
-
-.service-button {
-  min-width: 300px;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: transform 0.3s, box-shadow 0.3s;
-  z-index: 1;
-  position: relative;
-}
-
-.service-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.bg-purple {
-  background-color: #9b53e0;
-}
-
-.bg-cyan {
-  background-color: #22b8cf;
-}
-
-.bg-orange {
-  background-color: #ff922b;
-}
-
-.bg-yellow {
-  background-color: #fab005;
-}
 
 .service-detail {
   position: fixed;
@@ -271,6 +223,11 @@ nav {
   color: white;
   position: relative;
   z-index: 10;
+}
+
+.heroimg {
+  margin-top: -25px;
+  margin-left: -25px;
 }
 
 .service-detail-text h3 {
@@ -502,16 +459,16 @@ nav {
 
 /* Background colors */
 .bg-purple {
-  background-color: #9b53e0;
+  background-color: #A8518A;
 }
 .bg-cyan {
-  background-color: #22b8cf;
+  background-color: #00AFEF;
 }
 .bg-orange {
-  background-color: #ff922b;
+  background-color: #F58634;
 }
 .bg-yellow {
-  background-color: #fab005;
+  background-color: #008854;
 }
 
 /* slider styles */
